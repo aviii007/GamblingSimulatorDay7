@@ -3,21 +3,16 @@ package com.bridgelabz;
 import java.util.Scanner;
 
 public class Gambler {
-
-    static int AMOUNT_OF_STAKE = 100;
     static int TOTAL_AMOUNT_DIFF_IN_MONTH = 0;
-    static int BET_AMOUNT = 1;
     static int WON = 1;
     static int LOST = 0;
-    static int TOTAL_AMOUNT = 0;
-
 
     public static void main(String[] args) {
         int maximumWon[] = new int[100];
         int maximumLost[] = new int[100];
         int month = 1;
 
-        Scanner sc = new Scanner(System.in); // create object for scanner class
+        Scanner sc = new Scanner(System.in); 	// create object for scanner class
         boolean label = true;
 
         while (label) {
@@ -29,16 +24,17 @@ public class Gambler {
             int totalAmount = 0;
 
             /*
-             * using for loop to check condition After 20 days of playing every day would
-             * like to know the total amount won or lost.
+             * using for loop to check condition After 20 days of playing every day would like to
+             * know the total amount won or lost.
              */
+
 
             for (int i = 1; i <= 20; i++) {
                 int cashInHand = amountOfStake;
                 while (cashInHand > amountOfStake / 2 && cashInHand < amountOfStake * 1.5) {
 
                     /*
-                     * using random function to get a random number
+                     *  using random function to get a random number
                      */
                     int play = (int) Math.floor(Math.random() * 10) % 2;
                     System.out.println("Gamblers play:" + play);
@@ -60,12 +56,14 @@ public class Gambler {
                     }
                 }
 
+
                 /*
                  * Gambler if won or lost 50% of the stake, would resign for the day
                  */
                 if (cashInHand == (amountOfStake / 2) || cashInHand == (amountOfStake * 1.5)) {
                     System.out.println("Player would like to resign for current day" + i);
                 }
+
 
                 if (cashInHand > amountOfStake) {
                     int amountWonPerDay = cashInHand - amountOfStake;
@@ -82,10 +80,10 @@ public class Gambler {
                 totalAmount = totalAmount + cashInHand;
             }
 
-            /*
-             * check luckiest day of a gambler where won maximum and unluckiest day where
-             * lost maximum
-             */
+			/*
+			* check luckiest day of a gambler where won maximum and  unluckiest day
+			  where lost maximum
+			*/
             System.out.println("Luckiest days as following as gambler WON maximum amount");
             for (int i = 1; i <= 20; i++) {
                 if (maximumWon[i] == (amountOfStake * 1.5))
@@ -134,6 +132,7 @@ public class Gambler {
         }
     }
 }
+
 
 
 
